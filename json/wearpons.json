@@ -1,0 +1,35 @@
+{ "rightHand": {
+  "меч": [ 
+  {
+  "name": "меч тысячи истин +1",
+  "wearponCategory": "меч",
+  "image": "/src/wearpon/swordof1000true.jpg",
+  "damage": "2d12",
+  "bonus": "fire 2d4"
+  },
+  {
+  "name": "меч кладенец",
+  "wearponCategory": "меч",
+  "image": "/src/wearpon/cladenec.jpg",
+  "damage": "2d8",
+  "bonus": ""
+  }
+],
+  "посох": [ 
+  {
+  "name": "палка огревалка",
+  "wearponCategory": "посох",
+  "image": "/src/wearpon/palkaogrevalka.jpg",
+  "damage": "1d8",
+  "bonus": ""
+  },
+  {
+  "name": "меч кладенец",
+  "wearponCategory": "посох",
+  "image": "/src/wearpon/cladenec.jpg",
+  "damage": "2d8",
+  "bonus": ""
+  }
+]
+}
+}

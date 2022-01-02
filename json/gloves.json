@@ -1,0 +1,11 @@
+{ "gloves": [{
+  "gloves": [ 
+  {
+  "name": "перчатки трюкача",
+  "wearponCategory": "перчатки",
+  "image": "/src/wearpon/swordof1000true.jpg",
+  "bonus": "dex+2"
+  }
+]
+}]
+}

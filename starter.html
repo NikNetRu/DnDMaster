@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="DndMaster.css" rel="stylesheet" type="text/css"/> 
+    <title>Dungeon Master</title>
+    <meta name="description"  content="сдесь вы найдете инструментарий для ролевых игр">
+    <meta name="keywords"  content="Dnd, создание персонажа">
+  </head>
+  <body>
+    <div id = 'app'>
+      <header name = 'head' id = 'header'>
+        <a href="index.html"><img name = 'head' id = 'imageH' src="src\images\header.jpg"></a>
+        <p><br>Добро пожаловать</p>
+      </header>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Создать лист персонажа</a>
+      </li>
+    </ul>
+
+    <div class = 'row'>
+      <div class = 'col-4' name = 'leftBar'>
+        <form>
+          <div class="form-group">
+            <label>Имя</label>
+            <input v-model="person.name" type="name" name="name">
+            <label>Расса</label>
+            <select v-model="person.race" v-change = "" class="form-control" id="changeRace">
+              <option v-for = 'item in races' key="item.race" > {{ item.race }} </option>
+            </select>
+            <div>Бонус {{ getBonus('races', person.race) }}
+            </div>
+            <select v-model="person.class" v-change = "changeClass()" class="form-control" id="changeRace">
+              <option v-for = "item in tempValue.classes" key="item." > {{ item }} </option>
+            </select>
+            <div name = 'characteristics'>
+              Доуступные очки для рапределения {{ summaryPoints }}<br>
+              STR
+              <input type = "number" v-model = "bonuses.str"  name ='str'>  <br>
+              DEX
+              <input type = "number" v-model = "bonuses.dex" name="dex">  <br>
+              CON
+              <input type = "number" v-model = "bonuses.con" name="con">  <br>
+              WIS
+              <input type = "number" v-model = "bonuses.wis" name="wis">  <br>
+              INT
+              <input type = "number" v-model = "bonuses.int" name="int">  <br>
+              CHR
+              <input type = "number" v-model = "bonuses.chr" name="chr">  <br>
+            </div>  
+          </div>
+        </form>
+      </div>
+      <div class = 'col-8'>
+        <div>Имя : {{ person.name }}</div>
+        <div>Расса : {{ person.race }}</div>
+        <div>Класс : {{ person.class }}</div>
+        <div>Используемое оружие : {{ person.wearponCategory }}</div>
+        <div>Урон от атаки : {{ person.attack }}</div> 
+        <div>Характеристики
+          <div>INT: {{ person.characteristics.str }} </div>
+          <div>STR: {{ person.characteristics.dex }} </div>
+          <div>CON: {{ person.characteristics.con }} </div>
+          <div>WIS: {{ person.characteristics.wis }} </div>
+          <div>INT: {{ person.characteristics.int }} </div>
+          <div>CHR: {{ person.characteristics.chr }} </div>
+          <div> Снаряжение
+            <div>
+              Правая рука
+              {{ person.equipment.rightHand }}
+              <select v-model = "person.equipment.rightHand" v-change = "loadInEqupmentForChoose('rightHand')">
+                <option v-for = "item in tempValue.equipmentForChoose" > {{ item.name }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <footer>
+      <p>Инфо: NikNetRu@list.ru</p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="starter.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html> 
